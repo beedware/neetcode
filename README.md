@@ -40,7 +40,7 @@ The runner prints the example inputs from the problem description, the expected 
 Compile and run a challenge directly from the repo root:
 
 ```bash
-g++ -std=c++17 challenges/duplicate-integer/main.cpp -o /tmp/duplicate-integer
+clang++ -std=c++23 challenges/duplicate-integer/main.cpp -o /tmp/duplicate-integer
 /tmp/duplicate-integer
 ```
 
