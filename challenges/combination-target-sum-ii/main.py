@@ -1,0 +1,24 @@
+from typing import List
+
+class Solution:
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        pass
+
+EXAMPLES = [
+    "candidates=[9,2,2,4,6,1,5]\ntarget=8",
+    "candidates=[1,2,3,4,5]\ntarget=7"
+]
+EXPECTED = [
+    "[",
+    "["
+]
+
+
+if __name__ == "__main__":
+    from pathlib import Path
+    import sys
+
+    sys.path.append(str(Path(__file__).resolve().parents[2] / "helper"))
+    from python_runner import run_examples
+
+    run_examples(globals(), EXAMPLES, EXPECTED)
