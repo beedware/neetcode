@@ -2,7 +2,12 @@ from typing import List
 
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        pass
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
+        return False
 
 EXAMPLES = [
     "nums=[1,2,3,3]",
