@@ -37,11 +37,29 @@ The runner prints the example inputs from the problem description, the expected 
 
 ## Run C++
 
-Compile and run a challenge directly from the repo root:
+Compile and run a challenge from the repo root with `make`:
 
 ```bash
-clang++ -std=c++23 challenges/duplicate-integer/main.cpp -o /tmp/duplicate-integer
-/tmp/duplicate-integer
+make run CHALLENGE=duplicate-integer
+```
+
+You can also run a challenge by slug:
+
+```bash
+make duplicate-integer
+```
+
+The Makefile compiles `challenges/<slug>/main.cpp` to `build/challenges/<slug>/main` with debug symbols enabled:
+
+```bash
+clang++ -std=c++23 -g -O0 challenges/duplicate-integer/main.cpp -o build/challenges/duplicate-integer/main
+build/challenges/duplicate-integer/main
+```
+
+List available C++ challenges with:
+
+```bash
+make list
 ```
 
 The C++ runner uses the same examples and output format as the Python runner.
