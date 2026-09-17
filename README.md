@@ -49,10 +49,10 @@ You can also run a challenge by slug:
 make duplicate-integer
 ```
 
-The Makefile compiles `challenges/<slug>/main.cpp` to `build/challenges/<slug>/main` using the same compiler settings as the direct flow:
+The Makefile compiles `challenges/<slug>/main.cpp` to `build/challenges/<slug>/main` with debug symbols enabled:
 
 ```bash
-clang++ -std=c++23 challenges/duplicate-integer/main.cpp -o build/challenges/duplicate-integer/main
+clang++ -std=c++23 -g -O0 challenges/duplicate-integer/main.cpp -o build/challenges/duplicate-integer/main
 build/challenges/duplicate-integer/main
 ```
 
