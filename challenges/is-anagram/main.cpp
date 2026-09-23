@@ -3,7 +3,23 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        return false;
+        if (s.size() != t.size()) {
+            return false;
+        }
+
+        unordered_map<char, int> counter;
+
+        for (char c : s) {
+            counter[c]++;
+        }
+
+        for (char c : t) {
+            if (--counter[c] < 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 };
 
