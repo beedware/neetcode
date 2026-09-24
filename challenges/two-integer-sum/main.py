@@ -3,13 +3,15 @@ from typing import List
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         indexes: dict[int, int] = {}
-        n: int = len(nums)
-        for index in range(n):
-            num: int = nums[index]
-            other: int = target - num
-            if other in indexes:
-                return [indexes[other], index]
+
+        for index, num in enumerate(nums):
+            complement: int = target - num
+
+            if complement in indexes:
+                return [indexes[complement], index]
+
             indexes[num] = index
+
         return []
 
 EXAMPLES = [
