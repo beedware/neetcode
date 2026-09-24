@@ -4,7 +4,7 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        counter = {}
+        counter: dict[str, int] = {}
         for char in s:
             counter[char] = counter.get(char, 0) + 1
 
