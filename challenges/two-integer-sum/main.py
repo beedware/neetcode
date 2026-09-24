@@ -2,7 +2,17 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        indexes: dict[int, int] = {}
+
+        for index, num in enumerate(nums):
+            complement: int = target - num
+
+            if complement in indexes:
+                return [indexes[complement], index]
+
+            indexes[num] = index
+
+        return []
 
 EXAMPLES = [
     "nums=[3,4,5,6]\ntarget=7",
@@ -10,8 +20,7 @@ EXAMPLES = [
 ]
 EXPECTED = [
     "[0,1]",
-    "[0,2]",
-    "[0,1]"
+    "[0,2]"
 ]
 
 
