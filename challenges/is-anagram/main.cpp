@@ -7,14 +7,14 @@ public:
             return false;
         }
 
-        unordered_map<char, int> counter;
+        unordered_map<char, int> counts;
 
         for (char c : s) {
-            counter[c]++;
+            counts[c]++;
         }
 
         for (char c : t) {
-            if (--counter[c] < 0) {
+            if (--counts[c] < 0) {
                 return false;
             }
         }
