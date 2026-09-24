@@ -10,7 +10,12 @@ def _literal(value):
 
 def _parse_kwargs(case):
     return eval(
-        "dict(" + case.replace("null", "None").replace("true", "True").replace("false", "False") + ")",
+        "dict("
+        + case.replace("\n", ",")
+        .replace("null", "None")
+        .replace("true", "True")
+        .replace("false", "False")
+        + ")",
         {"__builtins__": {}, "dict": dict},
     )
 
