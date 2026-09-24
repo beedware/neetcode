@@ -1,19 +1,9 @@
+from collections import Counter
+
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-
-        if len(s) != len(t):
-            return False
-
-        counter: dict[str, int] = {}
-        for char in s:
-            counter[char] = counter.get(char, 0) + 1
-
-        for char in t:
-            if counter.get(char, 0) == 0 or counter[char] - 1 < 0:
-                return False
-            counter[char] -= 1
-
-        return True
+        return Counter(s) == Counter(t)
 
 
 EXAMPLES = ['s="racecar", t="carrace"', 's="jar", t="jam"']
